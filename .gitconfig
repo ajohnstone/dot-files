@@ -17,9 +17,11 @@
 
 [alias]
   d   = diff
+  df  = diff
   ds  = diff --staged
   dw  = diff --color-words
   s   = status -s -b
+  st  = status
   c   = commit -v
   co  = checkout
   w   = whatchanged --decorate
@@ -33,4 +35,3 @@
   pr  = "!f() { git fetch origin refs/pull/$1/head:pr/$1 && git co pr/$1; } ; f"
   up  = "!git fetch upstream && git rebase upstream/master"
   l = log --pretty='format:%C(yellow)%h%C(reset) %C(blue)%ad%C(reset) %s%C(red)%d%C(reset) %C(green)%an%C(reset), %C(cyan)%ar%C(reset)' --date=short
-
