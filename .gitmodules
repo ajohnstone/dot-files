@@ -1,56 +1,14 @@
-[submodule ".vim/bundle/command-t"]
-  path = .vim/bundle/command-t
-  url = https://github.com/wincent/Command-T.git
-[submodule ".vim/bundle/nerdtree"]
-  path = .vim/bundle/nerdtree
-  url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/coffee-script"]
-  path = .vim/bundle/coffee-script
-  url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/colors-solarized"]
-  path = .vim/bundle/colors-solarized
-  url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-markdown"]
-  path = .vim/bundle/vim-markdown
-  url = https://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/vim-rails"]
-  path = .vim/bundle/vim-rails
-  url = https://github.com/tpope/vim-rails.git
-[submodule ".vim/bundle/vim-vividchalk"]
-  path = .vim/bundle/vim-vividchalk
-  url = https://github.com/tpope/vim-vividchalk.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-commentary"]
-	path = .vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/vim-liquid"]
-	path = .vim/bundle/vim-liquid
-	url = https://github.com/tpope/vim-liquid.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git@github.com:chrishunt/oh-my-zsh.git
-[submodule ".vim/bundle/vim-mustache"]
-	path = .vim/bundle/vim-mustache
-	url = https://github.com/juvenn/mustache.vim.git
-[submodule ".vim/bundle/colors-base16"]
-	path = .vim/bundle/colors-base16
-	url = https://github.com/chriskempson/base16-vim.git
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/ag-vim"]
-	path = .vim/bundle/ag-vim
+[submodule ".vim/bundle/ag.vim"]
+	path = .vim/bundle/ag.vim
 	url = git://github.com/epmatsw/ag.vim.git
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
+[submodule ".vim/bundle/vim-javascript-syntax"]
+	path = .vim/bundle/vim-javascript-syntax
 	url = git://github.com/jelera/vim-javascript-syntax.git
-[submodule ".vim/bundle/xterm-color-table"]
-	path = .vim/bundle/xterm-color-table
+[submodule ".vim/bundle/vim-slurper"]
+	path = .vim/bundle/vim-slurper
+	url = git@github.com:adamlowe/vim-slurper.git
+[submodule ".vim/bundle/xterm-color-table.vim"]
+	path = .vim/bundle/xterm-color-table.vim
 	url = git@github.com:chrishunt/xterm-color-table.vim.git
 [submodule ".vim/bundle/gist-vim"]
 	path = .vim/bundle/gist-vim
@@ -58,21 +16,24 @@
 [submodule ".vim/bundle/webapi-vim"]
 	path = .vim/bundle/webapi-vim
 	url = git@github.com:mattn/webapi-vim.git
-[submodule ".vim/bundle/vim-endwise"]
-	path = .vim/bundle/vim-endwise
-	url = git@github.com:tpope/vim-endwise.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
 [submodule ".vim/bundle/puppet-syntax-vim"]
 	path = .vim/bundle/puppet-syntax-vim
 	url = git@github.com:puppetlabs/puppet-syntax-vim.git
-[submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
 [submodule ".vim/bundle/vim-abolish"]
 	path = .vim/bundle/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
-[submodule ".vim/bundle/vim-slurper"]
-	path = .vim/bundle/vim-slurper
-	url = git@github.com:adamlowe/vim-slurper.git
+[submodule ".vim/bundle/vim-endwise"]
+	path = .vim/bundle/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
+[submodule ".vim/bundle/vim-five"]
+	path = .vim/bundle/vim-five
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule ".vim/bugit"]
+	path = .vim/bugit
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
