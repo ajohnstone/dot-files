@@ -1,0 +1,148 @@
+TERM ansi
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM console
+TERM dtterm
+TERM Eterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM rxvt
+TERM rxvt-unicode
+TERM screen
+TERM screen-w
+TERM urxvt
+TERM vt100
+TERM vt220
+TERM xterm
+TERM xterm-color
+TERM xterm-debian
+
+
+# Below are the color init strings for the basic file types. A color init
+# string consists of one or more of the following numeric codes:
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+NORMAL 00        # global default, although everything should be something.
+FILE 00                # normal file
+DIR 00;32        # directory
+LINK 01;36        # symbolic link.  (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
+FIFO 40;33        # pipe
+SOCK 01;35        # socket
+DOOR 01;35        # door
+BLK 40;33;01        # block device driver
+CHR 40;33;01        # character device driver
+ORPHAN 05;31        # symlink to nonexistent file
+MISSING 05;31
+
+# This is for files with execute permission:
+EXEC 01;33 
+
+# List any file extensions like '.gz' or '.tar' that you would like ls
+# to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
+
+# archives or compressed formats
+.tar 00;31
+.tgz 00;31
+.arj 00;31
+.taz 00;31
+.lzh 00;31
+.zip 00;31
+.z   00;31
+.Z   00;31
+.gz  00;31
+.bz2 00;31
+.bz  00;31
+.deb 00;31
+.tz  00;31
+.rpm 00;31
+.cpio 01;31
+.jar 00;31
+
+
+# image formats
+.jpg 01;34
+.jpeg 01;34
+.JPG 01;34
+.gif 01;34
+.GIF 01;34
+.bmp 01;34
+.BMP 01;34
+.pbm 01;34
+.pgm 01;34
+.tga 01;34
+.tiff 01;34
+.eps 01;34
+.fig 01;34
+.xbm 01;34
+.ppm 01;34
+.xpm 01;34
+.tif 01;34
+.png 01;34
+
+
+# movie formats
+.mov 01;34
+.mpg 01;34
+.mpeg 01;34
+.wmv 01;34
+.avi 01;34
+.fli 01;34
+.gl 01;34
+.dl 01;34
+.xcf 01;34
+.xwd 01;34
+
+
+# audio formats
+.ogg 01;34
+.mp3 01;34
+.wav 01;34
+.wma 01;34
+.flac 01;34
+.asf 01;34
+.ram 01;34
+
+
+# Source Code
+.c   00;35
+.php 00;35
+.cpp 00;35
+.h   00;36
+.pl  00;35
+.pm  00;35
+.cgi 00;35
+.java 00;35
+.html 00;35
+
+
+# Stuff that should not exist
+*~   05;31 # stuff we hate to find laying around (flashing red)
+.mtxt 05;31 # crap
+.ndx 05;31
+
+
+# Text Files and Office Docs
+.tex 00;33
+.text 00;33
+.doc 00;33
+.odg 00;33
+.odp 00;33
+.ods 00;33
+.odt 00;33
+.pdf 00;33
+.ps 00;33
+.dvi 00;33
