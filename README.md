@@ -1,16 +1,9 @@
+# Andrew Johnstone's Dot Files
+
+These are the various config files I have to setup a system
+the way I want it.
+
 ## Installation
 
-```bash
-$ git clone git@github.com:ajohnstone/dot-files.git
-$ git submodule init
-$ git submodule update
-$ ln -s .vim/vimrc .vimrc
-$ ln -s .vim/gvimrc .gvimrc
-```
-
-## Updating
-
-```bash
-$ git pull
-$ git submodule foreach git pull origin master
-```
+    git clone git://github.com/ajohnstone/dotfiles.git
+    cd dotfiles && ./install.sh
