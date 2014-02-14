@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Git bash completion
+GIT_FILE="/usr/local/etc/bash_completion.d/git-completion.bash"
+test -f $GIT_FILE && source $GIT_FILE
