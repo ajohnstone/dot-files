@@ -1,1 +1,8 @@
+---
+:backtrace: false
+:benchmark: false
+:update_sources: true
+:verbose: true
+install: --no-ri --no-rdoc
+update: --no-ri --no-rdoc
 gem: --no-ri --no-rdoc
