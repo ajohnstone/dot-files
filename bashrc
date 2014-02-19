@@ -48,7 +48,7 @@ case $UNAME in
         ;;
     *)
         # Various sbins
-        PATH="/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"
+        PATH="/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin"
         PATH="/usr/local/bin:$PATH"
         ;;
 esac
@@ -102,6 +102,7 @@ export FTP_PASSIVE
 # Ignore backups, CVS directories
 FIGNORE="~:CVS:#:.pyc:.o:.git"
 HISTCONTROL=ignoreboth
+export HISTSIZE=1000000000
 
 #-------------------------------------------------------------------------------
 # Editor and Pager
@@ -247,10 +248,10 @@ alias vi="vim"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ls='ls -G' # colorized output
+alias ls='ls -G --color' # colorized output
 alias ll='ls -alG --color' # colorized output
-alias l='ls' # colorized output
-alias top='top -o cpu' # OSX's crazy top
+alias l='ls --color' # colorized output
+alias top='top' # OSX's crazy top
 alias rspec='rspec -c' # colorized rspec output
 #-----------------------------------------------------------------------------
 # Global Settings
@@ -262,3 +263,5 @@ shopt -s cmdhist
 
 # Nice ls output
 function ll(){ ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
