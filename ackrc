@@ -3,3 +3,6 @@
 --type-set=asciidoc=.asc
 --type-set=puppet=.pp
 --type-set=rust=.rs
+
+--ignore-dir=log
+--ignore-dir=tmp
