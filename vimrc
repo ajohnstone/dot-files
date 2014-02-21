@@ -7,6 +7,7 @@
 "	5. Restart Vim
 set nocompatible
 filetype off
+filetype plugin on
 
 if has("win32")
     " We're on Windows.
