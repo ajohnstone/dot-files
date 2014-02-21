@@ -1,7 +1,6 @@
 require 'rubygems' unless defined? Gem
+require 'irbtools'
 require 'hirb'
-require 'interactive_editor'
-require 'fancy_irb'
 require "awesome_print"
 
 FancyIrb.start :colorize => {
