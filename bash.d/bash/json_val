@@ -1,0 +1,10 @@
+# Parse json from bash
+# E.g. echo '{"nested":{"a":1,"b":2,"array":[0,1,2,3]}}' | json_val '["nested"]["array"][1]'
+
+json_val() {
+  [[ -z "$1" ]] && printf "Usage: json_val <path>\n" && return 10
+
+  python -c 'import sys; import json; \
+j = json.loads(sys.stdin.read()); \
+print j'$1';'
+}
