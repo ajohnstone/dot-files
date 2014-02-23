@@ -1,0 +1,12 @@
+# use ssh-agent
+setenv SSH_AUTH_SOCK $HOME/.screen-ssh-agent
+screen 10 ssh-agent -a $SSH_AUTH_SOCK $SHELL
+
+fit
+sessionname builder
+startup_message off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%w%=%m/%d %c"
+activity "activity: window ~%"`
+defscrollback 8192
