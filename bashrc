@@ -242,15 +242,23 @@ export COPYFILE_DISABLE=true
 #-----------------------------------------------------------------------------
 # Aliases
 #-----------------------------------------------------------------------------
+
+# OS-Specific path stuff
+if [[ `uname` == "Darwin" ]]; then
+    CLI_COLOR=' -G '
+elif [[ `uname` == "Linux" ]]; then
+    CLI_COLOR=' --color '
+fi
+
 alias diff="colordiff -Naur"
 alias less="less -R -i -E -M -X $@"
 alias vi="vim"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ls='ls -G --color' # colorized output
-alias ll='ls -alG --color' # colorized output
-alias l='ls --color' # colorized output
+alias ls="ls -G ${CLI_COLOR}" # colorized output
+alias ll="ls -alG ${CLI_COLOR}" # colorized output
+alias l="ls ${CLI_COLOR}" # colorized output
 alias top='top' # OSX's crazy top
 alias rspec='rspec -c' # colorized rspec output
 #-----------------------------------------------------------------------------
