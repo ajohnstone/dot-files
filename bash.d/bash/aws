@@ -1,0 +1,6 @@
+#!/usr/bin/bash env
+
+if [ -e "${HOME}/.aws/config" ]; then
+    export AWS_ACCESS_KEY_ID=$(cat ~/.aws/config | awk -F'=' '/aws_access_key_id/ {gsub(/ /, "", $2); print $2;exit;}');
+    export AWS_SECRET_ACCESS_KEY=$(cat ~/.aws/config | awk -F'=' '/aws_secret_access_key/ {gsub(/ /, "", $2); print $2;exit;}');
+fi
