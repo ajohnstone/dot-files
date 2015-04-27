@@ -12,6 +12,15 @@ function docker-ips() {
     done;
 }
 
+function docker-clean-exited() {
+    docker ps -a | while read line; do
+        echo $line | grep '^CONTAINER ID' && continue;
+        CID=$(echo $line | awk '{print $1}');
+        docker inspect -f "{{ .State.Running }}" $CID | grep -q 'false' && docker rm -f $CID;
+        
+    done;
+}
+
 # add variable DOCKER_ID with UID of most recent container
 alias docker-id='export DOCKER_ID=`docker ps -ql` && echo $DOCKER_ID'
 
