@@ -1,0 +1,25 @@
+# vi: set ft=ruby :
+
+# This is a Ruby-format .sfn configuration file - useful if you want to populate
+# values from environment variables. See
+# https://github.com/sparkleformation/sfn#configuration-formats for other
+# possibilities.
+
+# gem install sfn
+
+if File.exists?(aws_config = File.expand_path('~/.aws/config'))
+    require 'inifile'
+    file = IniFile.load(File.expand_path('~/.aws/config'))
+
+    ENV['AWS_DEFAULT_REGION'] ||= file['default']['region']
+    ENV['AWS_ACCESS_KEY_ID'] ||= file['default']['aws_access_key_id']
+    ENV['AWS_SECRET_ACCESS_KEY'] ||= file['default']['aws_secret_access_key']
+end
+
+Configuration.new do
+  credentials do
+    aws_region ENV['AWS_DEFAULT_REGION']
+    aws_access_key_id ENV['AWS_ACCESS_KEY_ID']
+    aws_secret_access_key ENV['AWS_SECRET_ACCESS_KEY']
+  end
+end
