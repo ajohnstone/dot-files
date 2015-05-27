@@ -9,7 +9,7 @@
 
 if File.exists?(aws_config = File.expand_path('~/.aws/config'))
     require 'inifile'
-    file = IniFile.load(File.expand_path('~/.aws/config'))
+    file = IniFile.load(aws_config)
 
     ENV['AWS_DEFAULT_REGION'] ||= file['default']['region']
     ENV['AWS_ACCESS_KEY_ID'] ||= file['default']['aws_access_key_id']
