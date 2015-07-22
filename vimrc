@@ -39,6 +39,7 @@ Bundle "PProvost/vim-ps1"
 Bundle "rodjek/vim-puppet"
 Bundle "tpope/vim-markdown"
 Bundle "nono/vim-handlebars"
+Bundle "fatih/vim-go"
 
 " Other plugins
 Bundle "airblade/vim-gitgutter"

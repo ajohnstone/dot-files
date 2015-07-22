@@ -27,3 +27,8 @@ for name in *; do
     esac
   fi
 done
+
+git submodule init
+git submodule update
+
+(cd ~; mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle);
