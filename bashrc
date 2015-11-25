@@ -270,6 +270,7 @@ alias rspec='rspec -c' # colorized rspec output
 # Save all lines of a multiple-line command in the same history entry
 shopt -s cmdhist
 
+export HISTTIMEFORMAT="%d/%m/%y %T ";
 
 # Nice ls output
 function ll(){ ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; }
