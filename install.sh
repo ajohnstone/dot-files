@@ -31,4 +31,23 @@ done
 git submodule init
 git submodule update
 
-(cd ~; mkdir .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo; git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle);
+mkdir -p ~/Desktop/projects/github/ajohnstone/;
+
+(
+    rm -rf  ~/Desktop/projects/github/ajohnstone/git-fresh/;
+    git clone https://github.com/imsky/git-fresh.git ~/Desktop/projects/github/ajohnstone/git-fresh/;
+    cd ~/Desktop/projects/github/ajohnstone/git-fresh/;
+    sudo bash ./install;
+);
+
+(
+    curl -sSL http://git.io/git-extras-setup | sudo bash /dev/stdin
+);
+
+(
+    cd ~;
+    mkdir -p .vim .vim/bundle .vim/backup .vim/swap .vim/cache .vim/undo;
+    rm -rf  .vim/bundle/vundle
+    git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
+);
+
