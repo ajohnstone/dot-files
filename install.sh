@@ -37,7 +37,7 @@ mkdir -p ~/Desktop/projects/github/ajohnstone/;
     rm -rf  ~/Desktop/projects/github/ajohnstone/git-fresh/;
     git clone https://github.com/imsky/git-fresh.git ~/Desktop/projects/github/ajohnstone/git-fresh/;
     cd ~/Desktop/projects/github/ajohnstone/git-fresh/;
-    sudo bash ./install;
+    sudo bash ./install.sh;
 );
 
 (
