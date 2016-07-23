@@ -213,7 +213,7 @@ fi
 
 #find $HOME/.bash.d/ -type f | while read p; do source $p; done
 
-PLUGINS=( "depot_tools" "git" "go" "java" "rbenv" "scala" "tmux" "windows" "bash/docker" "bash/docker-bash-completion" "bash/json_val" )
+PLUGINS=( "aliases" "git" "go" "java" "rbenv" "scala" "tmux" "windows" "bash/docker" "bash/docker-bash-completion" "bash/json_val" )
 
 for plugin in "${PLUGINS[@]}"; do
   plugin_path="$HOME/.bash.d/${plugin}"
