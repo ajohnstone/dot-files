@@ -1,10 +1,11 @@
 function kube-get-nodes() {
     (
-        printf "NAME\tPUBLIC_IP\tTAINT\tELAPSED\tCREATED\tINSTANCE_ID\tPOD_CIDR\tREGION\tINSTANCE_TYPE\n"
+        printf "NAME\tPUBLIC_IP\tINTERNAL_IP\tTAINT\tELAPSED\tCREATED\tINSTANCE_ID\tPOD_CIDR\tREGION\tINSTANCE_TYPE\n"
         kubectl get nodes -o json | jq -rc '.items[]' | while read -r line; do
             local name=$(echo "$line" | jq -rc '.metadata.name');
             local taint=$(echo "${line}" | jq -r '.metadata.annotations["scheduler.alpha.kubernetes.io/taints"] | select(.)' | jq -r '.[] | select(.key).value')
             local public_ip=$(echo "${line}" | jq -r '.status.addresses[] |select(.type =="ExternalIP").address')
+            local internal_ip=$(echo "${line}" | jq -r '.status.addresses[] |select(.type =="InternalIP").address')
             local launch_time=$(echo "${line}" | jq -r '.metadata.creationTimestamp')
             local zone=$(echo ${line} | jq -r '.metadata.labels["failure-domain.beta.kubernetes.io/zone"]')
             local instance_type=$(echo ${line} | jq -r '.metadata.labels["beta.kubernetes.io/instance-type"]')
@@ -14,7 +15,7 @@ function kube-get-nodes() {
             local now_ts=$(date '+%s');
             local elapsed=$( echo $now_ts - $start_ts |bc);
 
-            printf "$name\t$public_ip\t$taint\t${elapsed}\t$txt\t${zone}\t${instance_type}\n"
+            printf "$name\t$public_ip\t${internal_ip}\t$taint\t${elapsed}\t$txt\t${zone}\t${instance_type}\n"
         done
     ) | column -t -n
 }
