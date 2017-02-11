@@ -18,7 +18,7 @@ function kube-get-nodes() {
             local now_ts=$(date '+%s');
             local elapsed=$( echo $now_ts - $start_ts |bc);
 
-            [ $internal_ip == $active_master ] && is_active_master=1;
+            [ "${internal_ip}" == "${active_master}" ] && is_active_master=1;
 
             printf "$name\t$public_ip\t${internal_ip}\t$taint\t${elapsed}\t$txt\t${zone}\t${instance_type}\t${is_active_master}\n"
         done
