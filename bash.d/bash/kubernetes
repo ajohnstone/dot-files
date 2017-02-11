@@ -1,11 +1,13 @@
 function kube-get-nodes() {
     (
+        KUBE_CONTEXT=${KUBE_CONTEXT:-$(kubectl config current-context)};
+        echo $KUBE_CONTEXT
+
         printf "NAME\tPUBLIC_IP\tINTERNAL_IP\tTAINT\tELAPSED\tCREATED\tINSTANCE_ID\tPOD_CIDR\tREGION\tINSTANCE_TYPE\tACTIVE_MASTER\n"
 
-        KUBE_CONTEXT=${KUBE_CONTEXT:-$(kubectl config current-context)};
         local active_master=$(kubectl --context=${KUBE_CONTEXT} get ep kubernetes -o json | jq -r '.subsets[].addresses[].ip');
 
-        kubectl get nodes -o json | jq -rc '.items[]' | while read -r line; do
+        kubectl --context=${KUBE_CONTEXT} get nodes -o json | jq -rc '.items[]' | while read -r line; do
             local name=$(echo "$line" | jq -rc '.metadata.name');
             local taint=$(echo "${line}" | jq -r '.metadata.annotations["scheduler.alpha.kubernetes.io/taints"] | select(.)' | jq -r '.[] | select(.key).value')
             local public_ip=$(echo "${line}" | jq -r '.status.addresses[] |select(.type =="ExternalIP").address')
