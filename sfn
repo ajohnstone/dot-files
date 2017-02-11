@@ -17,6 +17,7 @@ if File.exists?(aws_config = File.expand_path('~/.aws/config'))
 end
 
 Configuration.new do
+  base_directory './'
   credentials do
     aws_region ENV['AWS_DEFAULT_REGION']
     aws_access_key_id ENV['AWS_ACCESS_KEY_ID']

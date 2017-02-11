@@ -277,3 +277,13 @@ function ll(){ ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total ";
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/andrew/google-cloud-sdk/path.bash.inc ]; then
+  source '/home/andrew/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/andrew/google-cloud-sdk/completion.bash.inc ]; then
+  source '/home/andrew/google-cloud-sdk/completion.bash.inc'
+fi
